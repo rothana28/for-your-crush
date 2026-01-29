@@ -1,0 +1,136 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f001a, #1a0033, #33001a);
+  color: #fff;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Optional floating hearts background (pure CSS) */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(255, 105, 180, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 70%, rgba(255, 20, 147, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  animation: pulse-bg 18s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-bg {
+  0%   { opacity: 0.4; transform: scale(1); }
+  100% { opacity: 0.7; transform: scale(1.15); }
+}
+
+/* Floating hearts (you can add more <div class="heart"> in HTML if you want) */
+.heart {
+  position: absolute;
+  font-size: 1.2rem;
+  color: #ff4d6d;
+  opacity: 0.6;
+  pointer-events: none;
+  animation: float 12s linear infinite;
+  z-index: 1;
+}
+
+@keyframes float {
+  0%   { transform: translateY(120vh) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.8; }
+  100% { transform: translateY(-30vh) rotate(360deg); opacity: 0; }
+}
+
+main {
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  padding: 20px;
+  max-width: 90vw;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 7vw, 4.5rem);
+  font-weight: 800;
+  margin-bottom: 0.8em;
+  background: linear-gradient(90deg, #ff6ec7, #ffcc33, #ff6ec7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 30px rgba(255, 105, 180, 0.6);
+  letter-spacing: -1px;
+}
+
+.btn-container {
+  position: relative;
+  width: 320px;
+  height: 240px;
+  margin: 40px auto 0;
+}
+
+button {
+  position: absolute;
+  padding: 16px 38px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  user-select: none;
+}
+
+.yes {
+  background: linear-gradient(135deg, #ff4d6d, #ff007a);
+  color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.yes:hover {
+  transform: translate(-50%, -50%) scale(1.12);
+  box-shadow: 0 12px 40px rgba(255, 77, 109, 0.6);
+}
+
+.no {
+  background: linear-gradient(145deg, #2a2a2a, #444);
+  color: #ccc;
+  border: 1px solid #555;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.no:hover {
+  background: #e63946;
+  color: white;
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 10px 30px rgba(230, 57, 70, 0.5);
+}
+
+/* Mobile adjustments */
+@media (max-width: 500px) {
+  .btn-container {
+    width: 280px;
+    height: 220px;
+  }
+  button {
+    padding: 14px 32px;
+    font-size: 1.1rem;
+  }
+}
