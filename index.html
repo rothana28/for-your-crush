@@ -3,57 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>I LOVE U❤️</title>
+    <title>Do You Love Me?</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main>
-      <h1>Can you be my Girlfriend?❤️</h1>
-      <div
-        class="heart"
-        style="left: 10%; animation-duration: 14s; animation-delay: 0s"
-      >
-        💗
-      </div>
-      <div
-        class="heart"
-        style="left: 25%; animation-duration: 18s; animation-delay: 2s"
-      >
-        ❤️
-      </div>
-      <div
-        class="heart"
-        style="left: 40%; animation-duration: 11s; animation-delay: 4s"
-      >
-        💖
-      </div>
-      <div
-        class="heart"
-        style="left: 60%; animation-duration: 16s; animation-delay: 1s"
-      >
-        💞
-      </div>
-      <div
-        class="heart"
-        style="left: 75%; animation-duration: 13s; animation-delay: 6s"
-      >
-        💘
-      </div>
-      <div
-        class="heart"
-        style="left: 88%; animation-duration: 15s; animation-delay: 3s"
-      >
-        💓
-      </div>
+    <main aria-label="Do you love me?">
+      <h1>Do you love me? ❤️</h1>
 
-      <div class="btn-container">
-        <button class="yes">Yes</button>
-        <button class="no">No 😢</button>
+      <div id="hearts-container" aria-hidden="true"></div>
+
+      <div class="btn-container" id="arena">
+        <button class="yes" type="button">Yes</button>
+        <button class="no"  type="button">No 😢</button>
       </div>
     </main>
+
+    <div id="yes-screen" aria-live="polite"></div>
 
     <script src="scripts.js"></script>
   </body>
 </html>
-
-
